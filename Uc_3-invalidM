@@ -1,0 +1,46 @@
+package day_11;
+import java.util.Scanner;
+
+class InvalidMoodException extends Exception 
+{
+	InvalidMoodException(String message)
+	{
+		super(message);
+	}
+}
+
+class HandleException 
+{
+	public String incorrectInput(String Mood) throws NullPointerException
+	{
+		try
+		{
+			if (Mood != null && (Mood.equals("HAPPY") || Mood.equals("SAD"))) 
+			{
+				return Mood;
+			}
+			else
+			{
+				throw new InvalidMoodException("Enter HAPPY OR SAD");
+			}
+		} catch(InvalidMoodException I)
+		{
+			System.out.println(I);
+			return "HAPPY";
+		}
+	}
+}
+
+public class InvalidInput 
+{
+
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		HandleException h1 = new HandleException();
+
+		System.out.println("Enter Mood:");
+		String Mood = sc.next();
+		String Result = h1.incorrectInput(Mood);
+	}
+}
