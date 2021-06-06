@@ -1,0 +1,27 @@
+package day_11;
+
+	import java.util.Scanner;
+
+	class Analyser extends Exception
+	{
+		public String MoodAnalyser(String Mood)
+		{
+				return Mood.toUpperCase();
+		}
+	}
+	
+	public class ResponseMood 
+	{
+
+		public static void main(String[] args) 
+		{
+			Scanner sc = new Scanner(System.in);
+			Analyser a1 = new Analyser();
+			System.out.println("Enter your mood:");
+			String isMood = sc.next();
+			String str = a1.MoodAnalyser(isMood);
+			System.out.println("Mood:"+str);
+		}
+
+	}
+
