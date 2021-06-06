@@ -1,0 +1,33 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import junit.framework.Assert;
+
+class If_InvalidInputTest {
+
+	@Test
+	void IfMoodNulltest() 
+	{
+		Analyser a1 = new Analyser();
+		
+		String str = a1.MoodAnalyser(null);
+		Assert.assertEquals("HAPPY:", str);
+	}
+	
+	@Test
+	public void IfWork()
+	{
+		Analyser a1 = new Analyser();
+		
+		String str = a1.MoodAnalyser("HAPPY");
+		Assert.assertEquals("HAPPY",str);
+		
+		str = "SAD";
+		str = a1.MoodAnalyser(str);
+		Assert.assertEquals("SAD",str);
+	}
+	
+	
+
+}
