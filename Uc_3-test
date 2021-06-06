@@ -1,0 +1,33 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import junit.framework.Assert;
+
+class InvalidInputTest {
+
+	@Test
+	void test() 
+	{
+		HandleException h1 = new HandleException();
+		
+		String str = null;
+		String Result = h1.incorrectInput(str);
+		
+		assertEquals("HAPPY", Result);
+		
+		str = "HAPPY";
+		Result = h1.incorrectInput(str);
+		assertEquals("HAPPY",str);
+		
+		 str = "";
+		 
+		 Result = h1.incorrectInput(str);
+		 assertEquals("HAPPY",Result);
+	
+		 str = "SAD";
+		 Result = h1.incorrectInput(str);
+		 assertEquals("SAD",Result);
+	}
+
+}
